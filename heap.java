@@ -12,7 +12,7 @@ public class heap {
     }
     public void switchUp(int index){
         while(((int)index/2) > 0){
-            if (heaplist.get(index) < heaplist.get((int)index/2)){
+            if (heaplist.get(index) > heaplist.get((int)index/2)){
                 int tem = heaplist.get((int)index/2);
                 heaplist.set((int)index/2, heaplist.get(index));
                 heaplist.set(index,tem);
@@ -23,7 +23,7 @@ public class heap {
     public void switchDown(int index){
         while((index*2)<= this.size){
             int midpos = this.mid(index);
-            if (heaplist.get(index) > heaplist.get(midpos)){
+            if (heaplist.get(index) < heaplist.get(midpos)){
                 int tem = heaplist.get(index);
                 heaplist.set(index, heaplist.get(midpos));
                 heaplist.set(midpos,tem);
@@ -35,7 +35,7 @@ public class heap {
         if ((int)(i * 2 + 1) > this.size)
             return (i * 2);
         else{
-            if (heaplist.get(i*2) < heaplist.get(i*2+1))
+            if (heaplist.get(i*2) > heaplist.get(i*2+1))
                 return (i * 2);
             else
                 return (i * 2 + 1);
@@ -55,6 +55,12 @@ public class heap {
         this.switchDown(1);
     }
     public String printheap(){
-        return this.heaplist.toString();
+        String a = this.heaplist.toString();
+        a = a.substring(4,a.length());
+        a = "[" +a;
+        return a;
+    }
+    public int getRoot(){
+        return heaplist.get(1);
     }
 }

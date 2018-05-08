@@ -5,7 +5,7 @@ public class proveheap {
 
     public static void main(String[] args) {
         heap l = new heap();
-        int[] lis = {18,2,13,9,6,32,25,3,7,15,4,1,8};
+        int[] lis = {2,7,26,25,19,17,1,90,3,36};
         for(int i=0;i<lis.length;i++){
             l.insert(lis[i]);
         }
