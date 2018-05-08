@@ -42,9 +42,14 @@ public class heap {
         }
     }
     public void insert(int k){
-        this.heaplist.add(k);
-        this.size++;
-        this.switchUp(this.size);
+        if(!heaplist.contains(k)){
+            this.heaplist.add(k);
+            this.size++;
+            this.switchUp(this.size);
+        }else{
+            System.out.println("This number is already on the heap");
+        }
+        
     }
     public void delete(){
         int val = this.heaplist.get(1);
