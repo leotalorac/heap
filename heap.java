@@ -59,7 +59,7 @@ public class heap {
     }
     public void delete(){
         if(size >1){
-            int val = this.heaplist.get(1);
+            //int val = this.heaplist.get(1);
             //System.out.println(val);
             this.heaplist.set(1,this.heaplist.get(heaplist.size()-1));
             size--;

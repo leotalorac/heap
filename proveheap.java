@@ -48,6 +48,7 @@ public class proveheap {
                 keep=false;
             }
         }
+        sc.close();
     }
 
 
