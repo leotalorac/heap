@@ -51,13 +51,24 @@ public class heap {
         }
         
     }
+    public boolean ihaveit(int k){
+        if(heaplist.contains(k)){
+            return true;
+        }
+        return false;
+    }
     public void delete(){
-        int val = this.heaplist.get(1);
-        //System.out.println(val);
-        this.heaplist.set(1,this.heaplist.get(heaplist.size()-1));
-        size--;
-        heaplist.remove(heaplist.size()-1);
-        this.switchDown(1);
+        if(size >1){
+            int val = this.heaplist.get(1);
+            //System.out.println(val);
+            this.heaplist.set(1,this.heaplist.get(heaplist.size()-1));
+            size--;
+            heaplist.remove(heaplist.size()-1);
+            this.switchDown(1);
+        }else{
+            System.out.println("you can't remove more");
+        }
+        
     }
     public String printheap(){
         String a = this.heaplist.toString();
